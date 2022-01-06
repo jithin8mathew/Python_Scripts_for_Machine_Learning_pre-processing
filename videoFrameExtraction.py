@@ -16,13 +16,13 @@ videoOutPath= sys.argv[2]
 # vidOut = parser.parse_args()
 
 
-vidcap = cv2.VideoCapture("F:\\ABEN\\Soy_pod_count_project\\raw_data\\PXL_20210925_191959963.mp4")
+vidcap = cv2.VideoCapture("path_to_file\\fileName.mp4")
 success,image = vidcap.read()
 count = 0
 length = int(vidcap.get(cv2.CAP_PROP_FRAME_COUNT))
 while success:
     if count % 10 == 0:
-        cv2.imwrite("F:\\ABEN\\Soy_pod_count_project\\raw_data\\PXL_20210925_191959963\\"+"frame%d.jpg" % count, image)     # save frame as JPEG file      
+        cv2.imwrite("path_to_file\\"+"frame%d.jpg" % count, image)     # save frame as JPEG file      
         success,image = vidcap.read()
     count += 1
 
